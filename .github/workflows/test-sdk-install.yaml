@@ -61,6 +61,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: sdk-tarball
+          path: sdk-tarball
 
       - name: Install the SDK with yarn
         run: |
@@ -90,6 +91,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: sdk-tarball
+          path: sdk-tarball
 
       - name: Install the SDK with npm
         run: |
