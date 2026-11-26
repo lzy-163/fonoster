@@ -32,7 +32,7 @@ jobs:
         working-directory: mods/sdk
 
       - name: Upload SDK tarball
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sdk-tarball
           path: mods/sdk/*.tgz
@@ -58,9 +58,10 @@ jobs:
         run: npm install -g yarn
 
       - name: Download SDK tarball
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: sdk-tarball
+          path: sdk-tarball
 
       - name: Install the SDK with yarn
         run: |
@@ -87,9 +88,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Download SDK tarball
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: sdk-tarball
+          path: sdk-tarball
 
       - name: Install the SDK with npm
         run: |
